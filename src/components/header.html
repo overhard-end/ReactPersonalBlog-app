@@ -1,0 +1,36 @@
+<header class="header">
+    {{>burger-menu}}
+    <nav class="header__left">
+        <ul class="header__nav">
+            <li><a href="#" class="header__nav__link">Главная</a></li>
+            <div class="droping">
+                <li><a href="#" class="header__nav__link  droping">Статьи
+                        <use>
+                            <svg class="header__svg" width="10" height="11" viewBox="0 0 10 5" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 5L0.669872 0.5L9.33013 0.5L5 5Z" fill="white" />
+                            </svg>
+                        </use>
+                    </a>
+                </li>
+                <div class="dropdown__links">
+                    <a href="#">Создание сайтов</a>
+                    <a href="#">Интернет-маркетинг</a>
+                    <a href="#">Продвижение видео</a>
+                </div>
+
+            </div>
+
+            <li><a href="#" class="header__nav__link">Обо мне</a></li>
+            <li><a href="#" class="header__nav__link">Реклама</a></li>
+        </ul>
+    </nav>
+    <div class="header__right">
+        <ul>
+            <!-- <li><a href="/profile" class="header__nav__link">Профиль</a></li> -->
+            <li><a href="/profile" class="header__nav__link">Войти</a></li>
+        </ul>
+        <form class="header__search__form">
+            <input type="text" placeholder="Поиск по блогу"></form>
+    </div>
+</header>
