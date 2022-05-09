@@ -1,4 +1,8 @@
-<div class="page-nav">
+import React from 'react'
+
+export const PostNavigation = () => {
+  return (
+    <div class="page-nav">
     <nav class="page-nav__inner">
         <a class="page-nav__btn page-nav__btn-back">
             <use><svg width="9" height="9" viewBox="0 0 7 7" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -21,3 +25,8 @@
         </a>
     </nav>
 </div>
+   
+  )
+}
+
+

@@ -1,5 +1,10 @@
-<div class="add-post">
-    <input class="add-post__input" type="text" placeholder="Напишите что-нибудь">
+import React from "react"
+
+
+export const AddPost = () =>{
+    return(
+        <div class="add-post">
+    <input class="add-post__input" type="text" placeholder="Напишите что-нибудь"/>
     <div class="add-post__btn-item">
         <button class="add-post__btn add-post__btn-add-image" type="button">
             <use><svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -14,3 +19,7 @@
         </button>
     </div>
 </div>
+
+    )
+
+}

@@ -1,10 +1,17 @@
-<header class="header">
-    {{>burger-menu}}
+import React from 'react'
+import { BurgerMenu } from './burger-menu'
+import { Link } from 'react-router-dom'
+
+export const Header= () => {
+  return (
+    <header class="header">
+    <BurgerMenu/>
     <nav class="header__left">
         <ul class="header__nav">
-            <li><a href="#" class="header__nav__link">Главная</a></li>
+            <Link to='/'><li><a class="header__nav__link">Главная</a></li> </Link>
             <div class="droping">
-                <li><a href="#" class="header__nav__link  droping">Статьи
+               <Link to='/post'>
+               <li><a  class="header__nav__link  droping">Статьи
                         <use>
                             <svg class="header__svg" width="10" height="11" viewBox="0 0 10 5" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -12,7 +19,7 @@
                             </svg>
                         </use>
                     </a>
-                </li>
+                </li></Link> 
                 <div class="dropdown__links">
                     <a href="#">Создание сайтов</a>
                     <a href="#">Интернет-маркетинг</a>
@@ -21,16 +28,23 @@
 
             </div>
 
-            <li><a href="#" class="header__nav__link">Обо мне</a></li>
+            <li><a to="/about" class="header__nav__link">Обо мне</a></li>
             <li><a href="#" class="header__nav__link">Реклама</a></li>
         </ul>
     </nav>
     <div class="header__right">
         <ul>
-            <!-- <li><a href="/profile" class="header__nav__link">Профиль</a></li> -->
-            <li><a href="/profile" class="header__nav__link">Войти</a></li>
+             <Link to="/profile"><li><a  class="header__nav__link">Профиль</a></li></Link>
+            <Link to ="/auth"><li><a  class="header__nav__link">Войти</a></li></Link>
         </ul>
         <form class="header__search__form">
-            <input type="text" placeholder="Поиск по блогу"></form>
+            <input type="text" placeholder="Поиск по блогу"/>
+                
+            </form>
     </div>
 </header>
+   
+  )
+}
+
+

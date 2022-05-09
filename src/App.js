@@ -1,26 +1,42 @@
 import React from 'react';
-import Counter from './components/counter';
-import Messeg from './components/messeg';
-import Post from './components/post';
+import { BrowserRouter as  Router,
+  Route,
+  Link,
+  Routes
+} from "react-router-dom"
+import { WorksPage } from './pages/worksPage';
+import { HomePage } from './pages/homePage';
+import { PostPage } from './pages/postPage';
+import { ProfilePage } from './pages/profilePage';
+import { AuthPage } from './pages/authPage';
+import { SignUpPage } from './pages/signUpPage';
+
 
 
  
 function App() {
- const arr =[{id:1,title:'hello',text:'what about JS?',date:'19.20.2021', imgUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png'},
-           {id:2,title:'HI',text:'what about PHP?',date:'10.20.2009', imgUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/149px-PHP-logo.svg.png'},
-
-];
+ 
   return (
-    <div>
-      {arr.map(post => <Post post={post} key={post.id}/>)}
+    <Router>
+      <div>
+
+      <Routes>
+       <Route exact path="/" element={<HomePage/>}>  
+       </Route>
+       <Route exact path="/works" element={<WorksPage/>}>  
+       </Route>
+       <Route exact path="/post" element={<PostPage/>}>  
+       </Route>
+       <Route exact path="/auth" element={<AuthPage/>}>  
+       </Route>
+       <Route exact path="/profile" element={<ProfilePage/>}>  
+       </Route>
+       <Route exact path="/sign-up" element={<SignUpPage/>}>  
+       </Route>
+       </Routes>
 
     </div>
-    
-  
-    
-    
-
-    
+    </Router>
     
    
   );

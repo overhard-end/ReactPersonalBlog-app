@@ -1,12 +1,17 @@
-<div class="burger-menu">
-    <span class="burger-menu__btn"></span>
-</div>
+import React from 'react';
+
+
+export const BurgerMenu = ()=>{
+    return(
+        <div class="burger-menu">
+          <span class="burger-menu__btn"></span>
+         
 <div id="bur" class="burger-menu--h">
     <div class="burger-menu__header">
-        <img class="burger-menu__img" src="assets/images/Rectangle.jpg">
+        <img class="burger-menu__img" src="assets/images/Rectangle.jpg"/>
         <div class="burger-menu__item">
             <div class="burger-menu__avatar">
-                <img class="burger-menu__avatar-img" src="assets/images/test.png">
+                <img class="burger-menu__avatar-img" src="../assets/images/test.png"/>
             </div>
             <div class="burger-menu__avatar-info">
                 <h3 class="burger-menu__avatar-name">Мухаммад Алимирзаев</h3>
@@ -33,3 +38,7 @@
     </div>
     
 </div>
+</div>
+        
+    )
+}

@@ -1,9 +1,16 @@
-<aside class="sidebar">
+import React from 'react';
+import { Link } from 'react-router-dom';
+
+import { ContactModal } from './contact-modal';
+
+export const Sidebar = () => {
+  return (
+    <aside class="sidebar">
     <div class="sidebar__header">
-         <img class="sidebar__header--img" src="assets/images/Rectangle.jpg"
-              alt="sidebar__img">
+         <img class="sidebar__header--img" src="../images/Rectangle.jpg"
+              alt="sidebar__img"/>
          
-            <img class="sidebar__header--photo" src="assets/images/test.png" alt="myphoto">
+            <img class="sidebar__header--photo" src='../images/test.png' alt="myphoto"/>
          <h3>Мухаммад Алимирзаев</h3>
          <p>Блог Front-End разработчика</p>
          <use class="sadebar__social--icons">
@@ -47,8 +54,15 @@
          компаниях и наработал более 10 000 часов в создании сайтов различной сложности.</p>
          <span></span>
          <div class="sadibar__main--buttons">
-             <button class="red my-works">Мои работы</button>
+         <Link to="/works"> <button class="red my-works">Мои работы</button></Link>
              <button class="blue contact-me">Написать мне</button>
          </div>
     </div>
+<ContactModal/>
 </aside>
+
+    
+  )
+}
+
+

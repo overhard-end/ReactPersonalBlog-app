@@ -422,6 +422,7 @@ body *,
     text-align: center;
     vertical-align: middle;
     position: relative;
+    cursor: pointer;
 }
 
 .header__nav__link:hover {
@@ -664,8 +665,7 @@ span {
 .container {
     margin: auto;
     max-width: 700px;
-    padding-left: 5rem;
-    padding-right: 5rem;
+   
 }
 
 @media (max-width: 680px) {
@@ -884,7 +884,7 @@ span {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url(icon-path);
+    
     opacity: 1;
 }
 
@@ -1136,6 +1136,8 @@ span {
 
 .post-body {
     margin-top: 30px;
+    border-bottom: 1px mistyrose solid;
+    margin-bottom: 20px;
 }
 
 .post__img {
@@ -1330,12 +1332,24 @@ span {
     flex-direction: row;
     box-shadow: 0 0px 30px 2px black;
     margin-bottom: 50px;
-}
+    overflow: hidden;
 
+}
+.works-item__left-item{
+    width: 310px;
+    height: 552px;
+   
+
+}
+.left-item__img{
+   
+    overflow: hidden;
+}
 .works-item__right-item {
     background: #202020;
     padding: 25px;
     position: relative;
+    
 }
 
 .right-item__name {
@@ -1364,28 +1378,28 @@ span {
     font-size: 11px;
     font-weight: 300;
     text-align: center;
-    padding: 5px  10px;
-    height: 21px;
+    padding: 5px  5px;
     background: #EA8C1E;
     border-radius: 3px;
 }
 
 .right-item__btn-item {
     position: absolute;
-    bottom: 0;
+    bottom: 20px;
     padding-bottom: 14px;
     right: 0;
 }
 
 .go-site-btn {
     margin-right: 34px;
-    width: 128px;
-    height: 30px;
+    padding: 10px 10px;
     background: #3137C9;
     border-style: none;
     color: #ffffff;
     font-size: 12px;
     border-radius: 5px;
+    text-decoration: none;
+    
 }
 
 .go-site-btn:active {
