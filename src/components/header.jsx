@@ -1,50 +1,53 @@
-import React from 'react'
-import { BurgerMenu } from './burger-menu'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { BurgerMenu } from './burger-menu';
+import { Link } from 'react-router-dom';
+import { Context } from '..';
+import { observer } from 'mobx-react-lite';
 
-export const Header= () => {
+export const Header = observer(() => {
+  const { store } = React.useContext(Context);
   return (
-    <header class="header">
-    <BurgerMenu/>
-    <nav class="header__left">
-        <ul class="header__nav">
-            <Link to='/'><li><a class="header__nav__link">Главная</a></li> </Link>
-            <div class="droping">
-               <Link to='/post'>
-               <li><a  class="header__nav__link  droping">Статьи
-                        <use>
-                            <svg class="header__svg" width="10" height="11" viewBox="0 0 10 5" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path d="M5 5L0.669872 0.5L9.33013 0.5L5 5Z" fill="white" />
-                            </svg>
-                        </use>
-                    </a>
-                </li></Link> 
-                <div class="dropdown__links">
-                    <a href="#">Создание сайтов</a>
-                    <a href="#">Интернет-маркетинг</a>
-                    <a href="#">Продвижение видео</a>
-                </div>
+    <header className="header">
+      <BurgerMenu />
+      <nav className="header__left">
+        <ul className="header__nav">
+          <Link to="/" className="header__nav__link">
+            <li>Главная</li>{' '}
+          </Link>
 
-            </div>
+          <Link to="/myPosts" className="header__nav__link">
+            <li>Мои посты</li>
+          </Link>
 
-            <li><a to="/about" class="header__nav__link">Обо мне</a></li>
-            <li><a href="#" class="header__nav__link">Реклама</a></li>
+          <li>
+            <Link to="/users" className="header__nav__link">
+              {' '}
+              Пользователи
+            </Link>
+          </li>
         </ul>
-    </nav>
-    <div class="header__right">
-        <ul>
-             <Link to="/profile"><li><a  class="header__nav__link">Профиль</a></li></Link>
-            <Link to ="/auth"><li><a  class="header__nav__link">Войти</a></li></Link>
+      </nav>
+      <div className="header__right">
+        <ul className="right-bottons-item">
+          {!store.isAuth ? (
+            <Link to="/auth" className="header__nav__link">
+              Войти
+            </Link>
+          ) : (
+            <Link to="/profile" className="header__nav__link">
+              Профиль
+            </Link>
+          )}
         </ul>
-        <form class="header__search__form">
-            <input type="text" placeholder="Поиск по блогу"/>
-                
-            </form>
-    </div>
-</header>
-   
-  )
-}
-
-
+        <form className="header__search__form">
+          <input
+            value={store.searchData}
+            onChange={(e) => store.setsearchData(e.target.value)}
+            type="text"
+            placeholder="Поиск по блогу"
+          />
+        </form>
+      </div>
+    </header>
+  );
+});

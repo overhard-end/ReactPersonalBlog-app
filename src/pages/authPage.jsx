@@ -1,28 +1,11 @@
-import React from "react";
-import { Auth } from "../components/auth";
-import { Header } from "../components/header";
-import { Sidebar } from "../components/sidebar";
+import { observer } from 'mobx-react-lite';
+import React, { useContext } from 'react';
+import { Auth } from '../components/auth';
 
-
-export const AuthPage =()=>{
-   
-    return(
-        
-<div className="page">
-    <Header/>
-    <Sidebar/>
-
-    <main className="main">
-               
-                <div className="container">
-                  <Auth/>
-                </div>
-    </main>
-
-</div>
-      
-        
-                
-
-    );
-};
+export const AuthPage = observer(() => {
+  return (
+    <div className="container">
+      <Auth />
+    </div>
+  );
+});

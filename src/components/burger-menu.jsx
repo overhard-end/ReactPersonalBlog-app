@@ -1,44 +1,56 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 
+import { Context } from '..';
+export const BurgerMenu = () => {
+  const { store } = useContext(Context);
 
-export const BurgerMenu = ()=>{
-    return(
-        <div class="burger-menu">
-          <span class="burger-menu__btn"></span>
-         
-<div id="bur" class="burger-menu--h">
-    <div class="burger-menu__header">
-        <img class="burger-menu__img" src="assets/images/Rectangle.jpg"/>
-        <div class="burger-menu__item">
-            <div class="burger-menu__avatar">
-                <img class="burger-menu__avatar-img" src="../assets/images/test.png"/>
-            </div>
-            <div class="burger-menu__avatar-info">
-                <h3 class="burger-menu__avatar-name">Мухаммад Алимирзаев</h3>
-                <p class="burger-menu__avatar-text">Блог Front-End разработчика</p>
-            </div>
+  function burgerMenuHandler() {
+    let menu = document.getElementById('burger-inner');
+    menu.classList.toggle('burger-menu-inner');
+  }
+
+  return (
+    <div className="burger-menu" onClick={() => burgerMenuHandler()}>
+      <span className="burger-menu__btn"></span>
+
+      <div id="burger-inner" className="burger-menu-inner_hidden">
+        <div className="sidebar__header">
+          <img className="sidebar__header--img" src="../images/1212.jpg" alt="sidebar__img" />
+          <h3> ГКОУ РД Горьковская ООШ Унцукульского района в Хасавюртовском районе с. Колоб</h3>
+          <ul className="burger-navigation">
+            <Link to="/" className="header__nav__link">
+              Главная
+            </Link>
+
+            <Link to="/myPosts" className="header__nav__link">
+              Мои посты
+            </Link>
+
+            <Link to="/users" className="header__nav__link">
+              Пользователи
+            </Link>
+
+            {!store.isAuth ? (
+              <Link to="/auth" className="header__nav__link">
+                Войти
+              </Link>
+            ) : (
+              <Link to="/profile" className="header__nav__link">
+                Профиль
+              </Link>
+            )}
+          </ul>
+
+          <span></span>
         </div>
-        <span class="burger-menu__under-line"></span>
-    </div>
-    <div class="burger-menu__links-item">
-        <div class="burger-menu__link burger-menu__link-drop">Статьи
-            <a class="burger-menu__link burger-menu__link--v">Создание сайтов</a>
-            <a class="burger-menu__link burger-menu__link--v">Интернет-маркетинг</a>
-            <a class="burger-menu__link burger-menu__link--v">Продвижение видео</a>
+        <div className="sidebar__main">
+          <span></span>
+          <div className="sadibar__main--buttons">
+            <button className="blue contact-me">Сайт школы</button>
+          </div>
         </div>
-        <a class="burger-menu__link">Обо мне</a>
-        <a class="burger-menu__link">Реклама</a>
-        <a class="burger-menu__link">Профиль</a>
+      </div>
     </div>
-    <div class="burger-menu__footer">
-        <div class="sadibar__main--buttons">
-            <button class="red">Мои работы</button>
-            <button class="blue">Написать мне</button>
-        </div>
-    </div>
-    
-</div>
-</div>
-        
-    )
-}
+  );
+};
