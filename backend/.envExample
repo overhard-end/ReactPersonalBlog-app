@@ -1,0 +1,10 @@
+PORT=8080
+DB_URL="mongodb+srv://<user><password>@cluster0.qq4lk.mongodb.net
+JWT_ACCESS_TOKEN='secret-jwt-key';
+JWT_REFRESH_TOKEN='secret-jwt-refresh-key'
+SMTP_HOST="smtp.gmail.com"
+SMTP_PORT="587"
+SMTP_USER=""
+SMTP_PASSWORD=""
+API_URL="https://someApiUrl
+CLIENT_URL="https://clientUrl
